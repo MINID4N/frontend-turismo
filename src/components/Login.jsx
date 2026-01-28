@@ -7,8 +7,8 @@ import axios from "axios";
 class Login extends React.Component {
     state = {
         form: {
-            "usuario": "Danny",
-            "contrasena": "Pablo123"
+            "usuario": "",
+            "contrasena": ""
         },
         error: "",
         errorMsg: ""
