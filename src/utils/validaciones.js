@@ -60,3 +60,30 @@ export const  validarNumero = (numero) => {
       return false;
     }
   };
+
+  export const VLetrasU = (texto) => {
+   let NomApeRegex = /^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/;
+   if (NomApeRegex.test(texto)) {
+      return true;
+   } else {
+      return false;
+   }
+}
+
+export const VUsuario = (texto) => {
+   let regex = /^[a-zA-Z0-9._-]{4,30}$/;
+   if (regex.test(texto)) {
+      return true;
+   } else {
+      return false;
+   }
+}
+
+export const VEmail = (texto) => {
+   let regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+   if (regex.test(texto)) {
+      return true;
+   } else {
+      return false;
+   }
+}
