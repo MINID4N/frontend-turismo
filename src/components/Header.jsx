@@ -11,10 +11,10 @@ function Header() {
             <Link to="/datos...">
                 <Button style={{margin: '10px'}}>Agentes</Button>
             </Link>
-            <Link to="/datos...">
+            <Link to="/datoslugares">
                 <Button style={{margin: '10px'}}>Lugares</Button>
             </Link>
-            <Link to="/datos...">
+            <Link to="/datosciudades">
                 <Button style={{margin: '10px'}}>Ciudades</Button>
             </Link>
         </center>

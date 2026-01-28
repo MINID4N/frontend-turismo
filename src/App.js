@@ -6,10 +6,29 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/Login';
 import Nuevo from './components/Nuevo';
 import DatosTuristas from './components/turistas/DatosTuristas';
+import DatosCiudades from './components/ciudades/DatosCiudades';
+import DatosLugares from './components/lugares/DatosLugares';
 import FormularioTurista from './components/turistas/FormularioTurista';
 import Dashboard from './components/Dashboard';
 
 class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      NoModal: true,
+      idForaneo: "0",
+      datoForaneo: "0",
+    };
+    this.EditarVariable = this.EditarVariable.bind(this);
+  }
+
+  EditarVariable(valorid, valorDato) {
+    this.setState({
+      idForaneo: valorid,
+      datoForaneo: valorDato
+    });
+  }
 
   notificacion = (mensaje) => {
    const parrafo = document.createElement('P'); // crea un parrafo
@@ -40,6 +59,8 @@ render() {
         <Routes>
           <Route path='/' element={<Login/>}/>
           <Route path='/datosturistas' element={<DatosTuristas notificacion={this.notificacion}/>}/>
+          <Route path='/datosciudades' element={<DatosCiudades notificacion={this.notificacion} NoModal={this.state.NoModal}/>}/>
+          <Route path='/datoslugares' element={<DatosLugares notificacion={this.notificacion} EditarVariable={this.EditarVariable} idForaneo={this.state.idForaneo} datoForaneo={this.state.datoForaneo} />} />
           <Route path='/nuevo' element={<Nuevo />}/>
           <Route path='/dashboard' element={<Dashboard/>}/>
           <Route path='/formtur' element={<FormularioTurista/>}/>

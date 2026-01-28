@@ -42,3 +42,21 @@ export const LetrasYNumeros = (texto) =>
     };
 
 export const noVacio = (valor) => valor.trim() !== "";
+
+export const soloLetras = (texto) => {
+    let NomApeRegex = /^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/;
+    if (NomApeRegex.test(texto)) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+export const  validarNumero = (numero) => {
+    const regex = /^[1-9]\d*$/; // Acepta solo enteros positivos (sin 0)
+    if (regex.test(numero)) {
+      return true;
+    } else {
+      return false;
+    }
+  };
